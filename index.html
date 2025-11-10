@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday Ichith Raj S 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #b3e5fc 0%, #81d4fa 100%);
+      color: #034567;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 10px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 50px;
+      color: #01579b;
+      text-shadow: 0 0 15px #4fc3f7;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #4fc3f7, 0 0 20px #4fc3f7; }
+      to { text-shadow: 0 0 25px #0288d1, 0 0 45px #0288d1; }
+    }
+
+    .quotes {
+      text-align: center;
+      font-size: 20px;
+      color: #01579b;
+      min-height: 60px;
+      margin-top: 20px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .main-photo {
+      width: 80%;
+      max-width: 600px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.2);
+      animation: zoomIn 2s ease-in-out;
+    }
+
+    .cake-gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 40px 0;
+    }
+
+    .cake-gallery img {
+      width: 200px;
+      height: 160px;
+      border-radius: 12px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    }
+
+    .cake-gallery img:hover {
+      transform: scale(1.1) rotate(2deg);
+    }
+
+    .video-section {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    video {
+      width: 320px;
+      height: 200px;
+      border-radius: 15px;
+      margin: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    .message {
+      text-align: center;
+      font-size: 22px;
+      margin: 40px;
+      color: #01579b;
+    }
+
+    .balloons div {
+      position: absolute;
+      bottom: -150px;
+      width: 40px;
+      height: 55px;
+      background: #81d4fa;
+      border-radius: 50%;
+      animation: rise 8s linear infinite;
+    }
+
+    @keyframes rise {
+      0% { transform: translateY(0); opacity: 0.9; }
+      100% { transform: translateY(-110vh); opacity: 0; }
+    }
+
+    @keyframes zoomIn {
+      0% { transform: scale(0.6); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎉 Happy Birthday Ichith Raj S 🎂</h1>
+    <div class="quotes" id="quoteText">Wishing you endless smiles and joy today! 💙</div>
+  </header>
+
+  <img src="ichi.jpg" alt="Main Birthday Image" class="main-photo">
+
+  <div class="cake-gallery" id="cakeGallery"></div>
+
+  <div class="video-section">
+    <h2>🎥 Birthday Memories</h2>
+    <video src="ichi11.mp4" autoplay loop muted></video>
+    <video src="ichi12.mp4" autoplay loop muted></video>
+  </div>
+
+  <div class="message">
+    <p>🎈 Keep glowing, keep smiling, Ichith! Your kindness and energy light up every moment!</p>
+    <p>💫 May your year be filled with sweet surprises, laughter, and success!</p>
+    <p>🍽️ Here’s some delicious Parota & Paneer Gravy to celebrate! have it and enjoy😋</p>
+    <img src="pota.jpeg" alt="Parota and Paneer" style="width:250px; border-radius:15px; box-shadow:0 0 15px rgba(0,0,0,0.2);">
+  </div>
+
+  <script>
+    const quotes = [
+      "🎂 Wishing you endless smiles and joy today, Ichith!",
+      "🎉 May your dreams take flight this year!",
+      "💙 Keep shining brighter every day!",
+      "🎈 Have the best birthday ever"
+    ];
+    let index = 0;
+    const quoteText = document.getElementById("quoteText");
+    setInterval(() => {
+      quoteText.style.opacity = 0;
+      setTimeout(() => {
+        quoteText.textContent = quotes[index];
+        quoteText.style.opacity = 1;
+        index = (index + 1) % quotes.length;
+      }, 500);
+    }, 3000);
+
+    const cakes = ['ichi2.jpg', 'ichi3.jpg', 'ichi5.jpg', 'ichi7.jpg', 'ichi4.jpg'];
+    const cakeGallery = document.getElementById("cakeGallery");
+    cakes.forEach(url => {
+      const img = document.createElement("img");
+      img.src = url;
+      cakeGallery.appendChild(img);
+    });
+
+    const balloonContainer = document.createElement('div');
+    balloonContainer.classList.add('balloons');
+    document.body.appendChild(balloonContainer);
+    function createBalloon() {
+      const balloon = document.createElement('div');
+      balloon.style.left = Math.random() * 100 + 'vw';
+      balloon.style.background = `hsl(${Math.random()*360}, 70%, 70%)`;
+      balloon.style.animationDuration = 6 + Math.random() * 4 + 's';
+      balloonContainer.appendChild(balloon);
+      setTimeout(() => balloon.remove(), 10000);
+    }
+    setInterval(createBalloon, 600);
+  </script>
+
+</body>
+</html>
